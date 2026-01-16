@@ -4,7 +4,6 @@ import { CONFIG } from "./config.js";
 const ai = new GoogleGenAI({ apiKey: CONFIG.gemini.apiKey });
 
 export async function callGemini(prompt) {
-    console.log('calling gemini api from gemini.js')
     try {
         const response = await ai.models.generateContent({
             model: CONFIG.gemini.model,

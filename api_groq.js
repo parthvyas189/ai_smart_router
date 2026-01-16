@@ -8,7 +8,6 @@ const client = new OpenAI({
 });
 
 export async function callGroq(prompt) {
-    console.log('calling groq api from groq.js')
     try {
         const response = await client.chat.completions.create({
             model: CONFIG.groq.model,

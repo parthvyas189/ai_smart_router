@@ -102,7 +102,6 @@ export async function routeRequest(prompt) {
             rpmTracker.counts[providerId] = (rpmTracker.counts[providerId] || 0) + 1;
 
             // Call the API
-            console.log('calling the api from router.js')
             const result = await adapterFunction(prompt);
 
             // If successful, log persistence metrics
@@ -119,6 +118,3 @@ export async function routeRequest(prompt) {
     // If the loop finishes without returning, everything failed
     throw new Error("System unavailable: All providers failed.");
 }
-
-const ans=await routeRequest('explain what is an api in 1 sentence')
-console.log(ans)
